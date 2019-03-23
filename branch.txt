@@ -1,1 +1,18 @@
+
 - ch-developer-setup-environment-164808166
+
+- LFA github kenneth051
+
+PR template to use
+
+#### What does this PR do?
+#### Description of Task to be completed?
+#### How should this be manually tested?
+#### Any background context you want to provide?
+#### What are the relevant pivotal tracker stories?
+#### Screenshots (if appropriate)
+#### Questions:
+
+Required endpoints
+- epicmail/api/v3/auth/signup
+- epicmail/api/v3/auth/signin

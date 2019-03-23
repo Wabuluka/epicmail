@@ -2,7 +2,7 @@
 
 from flask_testing import TestCase
 
-from epicmail.app import app
+from app import app
 
 
 class BaseTest(TestCase):

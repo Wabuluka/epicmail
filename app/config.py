@@ -1,8 +1,6 @@
 # epicmail/app/config.py
-
 import os
-postgres_local_base = 'postgresql://postgres:root123@localhost/'
-database_name = 'challengethree'
+from app import app
 
 class BaseConfiguration:
     """Base Configuration for the API."""
@@ -14,7 +12,7 @@ class DevelopmentConfiguration(BaseConfiguration):
     """Development Configuration"""
     DEBUG = True
     BCRYPT_LOG_ROUNDS = 4
-    DATABASE_URI = postgres_local_base + database_name
+    DATABASE_URI = os.getenv("DATABASE_URL" + "challengethree") 
 
 
 class TestingConfiguration(BaseConfiguration):
@@ -22,10 +20,10 @@ class TestingConfiguration(BaseConfiguration):
     DEBUG = True
     TESTING = True
     BCRYPT_LOG_ROUNDS = 4
-    DATABASE_URI = postgres_local_base + database_name + '_test'
+    DATABASE_URI = os.getenv("DATABASE_URL" + "challengethree_test")
 
 class ProductionConfiguration(BaseConfiguration):
     """Production configuration."""
     SECRET_KEY = 'just anything secret'
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = 'postgresql:///'
+    DATABASE_URI = 'postgresql:///'

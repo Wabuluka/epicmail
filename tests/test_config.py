@@ -5,11 +5,11 @@ import unittest
 from flask import current_app
 from flask_testing import TestCase
 
-from epicmail.app import app
+from app import app
 
 class TestDevelopmentConfig(TestCase):
     def create_app(self):
-        app.config.from_object('epicmail.app.config.DevelopmentConfiguration')
+        app.config.from_object('app.config.DevelopmentConfiguration')
         return app
 
     def test_app_is_development(self):
@@ -18,7 +18,7 @@ class TestDevelopmentConfig(TestCase):
 
 class TestTestingConfig(TestCase):
     def create_app(self):
-        app.config.from_object('epicmail.app.config.TestingConfiguration')
+        app.config.from_object('app.config.TestingConfiguration')
         return app
 
     def test_app_is_testing(self):
@@ -27,7 +27,7 @@ class TestTestingConfig(TestCase):
 
 class TestProductionConfig(TestCase):
     def create_app(self):
-        app.config.from_object('epicmail.app.config.ProductionConfiguration')
+        app.config.from_object('app.config.ProductionConfiguration')
         return app
 
     def test_app_is_production(self):
